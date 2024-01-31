@@ -11,7 +11,11 @@
 a:hover{
     color: var(--color-primary);
 }
-
+header{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
 body{
     font-family: 'Roboto', sans-serif;
     padding: 25px;
@@ -111,8 +115,12 @@ h1{
 }
 nav{
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content:space-between;
+    padding-left: auto;
+    padding-right: auto;
+    max-width: 1024px;
 }
 p{
     margin: 0px;
