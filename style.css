@@ -218,8 +218,8 @@ li{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90px;
-    width: 90px;
+    height: 120px;
+    width: 120px;
     border-radius: 50%;
     border: solid 1px var(--color-primary);
     text-decoration: none;
@@ -365,6 +365,9 @@ input:focus, textarea:focus{
     }
     .cv{
         font-size: 13px;
+    }
+    .index-main{
+        height:fit-content;
     }
 }
 @media screen and (max-width: 650px) {
