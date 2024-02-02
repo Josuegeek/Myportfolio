@@ -232,6 +232,7 @@ li{
 
 .yellow-back{
     background-color: var(--color-yellow);
+    color: black;
 }
 .red-back{
     background-color: var(--color-red);
