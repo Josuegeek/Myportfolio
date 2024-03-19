@@ -1,13 +1,25 @@
 :root{
     --color-primary:rgb(0, 132, 255);
+    --color-primary-dark:rgb(5, 55, 101);
     --color-yellow:#EEA302;
     --color-red:#E13B25;
     --color-blue-green:#80D8DA;
     --color-yellow-dark:#c38603;
     --color-red-dark:#b22e1c;
     --color-blue-green-dark:#6ebfc1;
+    --color-grey:#b0b0b0;
 }
+@keyframes colorAnim {
+    From {
+        filter : grayscale(1) ;
+    }
+    To {
+        filter: grayscale(0) ;
+        transform: scale(1.018);
+        border-radius: 48%;
+    }
 
+}
 a:hover{
     color: var(--color-primary);
 }
@@ -24,20 +36,20 @@ body{
 .index-main{
     display: flex;
     flex-wrap: wrap;
-    height: 75vh;
+    min-height: 75vh;
     justify-content: center;
     align-items: center;
     gap: 40px;
     transition: all ease-in-out 0.3s;
-    min-width: fit-content;
 }
 form{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    border: 1px solid #ddd;
     border-radius: 15px;
     height: fit-content;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    padding: 10px;
 }
 form h2{
     font-size: 20px;
@@ -47,8 +59,7 @@ form h2{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    max-width: 1000px;
-    margin-top: 80px;
+    max-width: 1024px;
     justify-content: space-between;
 }
 .cv-main{
@@ -62,7 +73,7 @@ form h2{
 .projects-container{
     display: flex;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1024px;
     margin: 10px;
     margin-top: 70px;
 }
@@ -76,11 +87,11 @@ form h2{
     gap: 15px;
     align-items: center;
     padding: 15px;
-    border:solid 1px rgb(211, 234, 251);
     border-radius: 10px;
     cursor: pointer;
     transition: all ease-in-out 0.3s;
     margin: 5px 0px 5px 0px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 .project-div:hover{
     background-color: aliceblue;
@@ -94,11 +105,8 @@ form h2{
     padding: 10px;
     background-color: #ddd;
 }
-.contacts-main{
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 75vh;
-    justify-content: center;
+.project-div b{
+    font-size: large;
 }
 h1{
     font-size: 65px;
@@ -108,6 +116,15 @@ h1{
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
+    transition: all ease-in-out 0.3s;
+}
+.logoname:hover{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: aliceblue;
+    transition: all ease-in-out 0.3s;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
 }
 .logoname a{
     text-decoration: none;
@@ -118,8 +135,6 @@ nav{
     width: 100%;
     align-items: center;
     justify-content:space-between;
-    padding-left: auto;
-    padding-right: auto;
     max-width: 1024px;
 }
 p{
@@ -139,7 +154,6 @@ p{
 .navmenu li a:hover{
     color: var(--color-primary);
 }
-
 .btn-circle{
     display: flex;
     justify-content: center;
@@ -148,14 +162,14 @@ p{
     cursor: pointer;
     width: 100px;
     border-radius: 50%;
-    border: solid 1px var(--color-primary);
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     text-decoration: none;
     color: black;
     transition: all ease-in-out 0.3s;
 }
-
 .btn-circle:hover{
-    box-shadow: 1px 3px 5px var(--color-primary);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .btn:active{
@@ -189,13 +203,18 @@ li{
     list-style: none;
 }
 .profile-pic{
+    filter: grayscale(1);
     width: 400px;
     height: 400px;
     background-size: cover;
     background-color: #444;
     background-position: center;
     border-radius: 50%;
-    transition: all ease-in-out 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    transition: all ease-in-out 0.5s;
+}
+.profile-pic:hover{
+    filter: grayscale(0);
 }
 .profile-text{
     text-align: justify;
@@ -207,7 +226,7 @@ li{
 }
 .profile-menu{
     display: flex;
-    width: 100%;
+    width: 100%;        
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -221,13 +240,14 @@ li{
     height: 120px;
     width: 120px;
     border-radius: 50%;
-    border: solid 1px var(--color-primary);
     text-decoration: none;
     color: black;
     transition: all ease-in-out 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 .profile-menu li a:hover{
-    box-shadow: 1px 3px 5px var(--color-primary);
+    box-shadow: 1px 3px 5px var(--color-blue-green);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .yellow-back{
@@ -273,12 +293,17 @@ footer{
 .row{
     display: flex;
     gap: 10px;
-    justify-content: center;
+    flex-wrap: wrap;
 }
 
 a{
     color: black;
     text-decoration: none;
+}
+
+.exp-title p{
+    color: var(--color-primary-dark);
+    align-self: flex-end;
 }
 
 .icon a{
@@ -303,10 +328,12 @@ a{
     margin-top: 50px;
     border-radius: 5px;
     border: solid 1px #ddd;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 .cv h1{
     font-size: 20px;
     margin: 25px 0px 25px 0px;
+    text-align: center;
 }
 h3{
     margin: 0px;
@@ -326,6 +353,7 @@ h3{
 .exp-title{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .text-desc{
     margin-top: 20px;
@@ -342,6 +370,7 @@ h3{
 .input-div{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 20px;
 }
 input,textarea{
@@ -355,45 +384,110 @@ input,textarea{
 input:focus, textarea:focus{
     border: 2px solid var(--color-primary);
 }
+
+/* Tablettes responsivity 2*/
 @media screen and (max-width: 905px) {
     .footer-container{
+        align-items: center;
+        gap: 20px;
         font-size: 14px;
+        flex-wrap: wrap;
         width: 90%;
     }
-     .profile-pic{
-        border-radius: 2px;
-        margin-top: 30px;
-    }
+    
     .cv{
         font-size: 13px;
     }
-    .index-main{
-        height:fit-content;
-    }
-}
-@media screen and (max-width: 650px) {
     .footer-container{
-        font-size: 13px;
+        flex-direction: column;
         width: 100%;
     }
+    .footer-container .column{
+        align-items: center;
+    }
     input, textarea, label{
-        font-size: 14px;
+        font-size: 15px;
+    }
+    .profile-text h1, h3{
+        text-align: center;
+    }
+    .index-main{
+        margin-top: 50px; 
+    }
+    .project-div .column {
+        text-align: justify;
+        max-width: 50%;
     }
 }
-@media screen and (max-width: 525px) {
+@media screen and (max-width: 767px) {
     footer{
         width: 100%;
     }
+    .input-div{
+        padding: 10px;
+    }
+    .exp-container .exp-title h2{
+        font-size: 16px;
+    }
+    .exp-container .exp-title{
+        flex-direction: column;
+        justify-content: center;align-items: center;
+    }
+    .form-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-container .exp-title{
+        justify-content: center;
+    }
+    .form-container .column b, .form-container .column p{
+        text-align: center;
+    }
+    .cv h1{
+        text-align: center;
+    }
+    nav{
+        flex-direction: column;
+        gap: 10px;
+    }
     .footer-container{
-        font-size: 10px;
         width: 100%;
+    }
+    .row{
+        justify-content: center;
+    }
+    form{
+        margin-top: 30px;
+        width: fit-content;
+    }
+    .project-div{
+        flex-direction: column-reverse ;
+    }
+    .projects-container{
+        margin-top: 0px;
+    }
+    .projects-container .exp-title{
+        justify-content: center;
+    }
+    .project-div .column {
+        text-align: justify;
+        max-width: 90%;
+    }
+    input, textarea{
+        width: 200px;
     }
 }
 @media screen and (max-width: 450px) {
+    body{
+        padding: 10px;
+    }
+    .project-div img{
+        max-width: 200px;
+    }
     .profile-pic{
-        width: 300px;
-        height: 300px;
-        margin-top: 30px;
+        width: 280px;
+        height: 280px;
     }
     .profile-menu li a{
         height: 80px;
@@ -401,5 +495,11 @@ input:focus, textarea:focus{
     }
     .profile-menu{
         gap: 10px;
+    }
+    .exp-title p{
+        font-size: 10px;
+    }
+    .exp-title{
+        gap: 5px;
     }
 }
